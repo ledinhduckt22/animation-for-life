@@ -12,8 +12,8 @@
   width: 35px;
   height: 35px;
   border: 5px solid #ccc;
-  border-top-color: rgb(3, 155, 229);
-  border-left-color: rgb(3, 155, 229);
+  border-top-color: rgba(3, 155, 229, 1);
+  border-left-color: rgba(3, 155, 229, 1);
   border-radius: 50%;
   animation: spinning 800ms infinite linear;
 }
@@ -23,8 +23,12 @@
     transform: rotate(360deg);
   }
 }
+
 /* End loading animation style */
+
 /* Start water melon transition style */
+$sizeElement: 200px;
+
 *,
 body {
   margin: 0;
@@ -35,13 +39,13 @@ body {
 }
 
 #svgcontainer {
-  width: 200px;
-  height: 200px;
+  width: $sizeElement;
+  height: $sizeElement;
   border: 1px solid #eee;
   background: #fff;
   border-radius: 50%;
   position: relative;
-  top: 200px;
+  top: $sizeElement;
   transform: translateY(-50%);
   margin: 0 auto;
   overflow: hidden;
@@ -71,7 +75,7 @@ body {
 
 #svgcontainer:hover {
   cursor: pointer;
-  border: 11.1111111111px solid rgb(84, 230, 84);
+  border: calc($sizeElement / 18) solid rgb(84, 230, 84);
 }
 
 #svgcontainer:hover h2 {
@@ -91,7 +95,4 @@ body {
 #svgcontainer:hover path {
   opacity: 0.125;
 }
-
 /* End water melon transition style */
-
-/*# sourceMappingURL=styles.css.map */
